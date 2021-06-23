@@ -28,9 +28,9 @@ public class BasePageTest {
             case CHROME:
                     System.setProperty("webdriver.chrome.driver", ChromePath);
                     webDriver = new ChromeDriver();
-            case FIREFOX:
-                    System.setProperty("webdriver.gecko.driver", FirefoxPath);
-                    webDriver = new FirefoxDriver();
+//            case FIREFOX:
+//                    System.setProperty("webdriver.gecko.driver", FirefoxPath);
+//                    webDriver = new FirefoxDriver();
         }
         webDriver.get("http://lucstictactoe.herokuapp.com/");
         webDriver.manage().window().maximize();
@@ -68,6 +68,7 @@ public class BasePageTest {
     public static void endingTests() {
         softly.assertAll();
         webDriver.close();
+        webDriver.quit();
     }
 
 }
