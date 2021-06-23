@@ -23,7 +23,7 @@ public class GamePage {
     private WebDriver webDriver;
     private String player1;
     private String player2;
-    private static final int MovesNeededForFirstPLayerToWin = 6;
+    private static final int MOVESNEEDEDFORFIRSTPLAYERTOWIN = 6;
     private static final int FIRSTPLAYERSCORE = 0;
     private static final int SECONDPLAYERSCORE = 1;
 
@@ -65,7 +65,7 @@ public class GamePage {
         return this;
     }
 
-    GamePage validateTurnLabel(String actualPlayer, int whichMove) {
+    private GamePage validateTurnLabel(String actualPlayer, int whichMove) {
         PageFactory.initElements(webDriver, this);
         softly.assertThat(whoseTurnLabel.getText())
                 .as(String.format("ActualPlayerLabel for %d move - Validated", whichMove))
@@ -74,7 +74,7 @@ public class GamePage {
     }
 
     EndGamePopup testWiningGame() {
-        for (int i = 0; i <= MovesNeededForFirstPLayerToWin; i++) {
+        for (int i = 0; i <= MOVESNEEDEDFORFIRSTPLAYERTOWIN; i++) {
             if (i % 2 == 0 || i == 0)
                 validateTurnLabel(player1, i);
             else

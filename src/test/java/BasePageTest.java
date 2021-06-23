@@ -1,13 +1,10 @@
 import org.assertj.core.api.SoftAssertions;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.PageFactory;
-
 
 public class BasePageTest {
 
@@ -23,22 +20,17 @@ public class BasePageTest {
     private final static String FirefoxPath = "drivers/geckodriver.exe";
 
     @BeforeClass
-    public static void prepareTestEnv() throws Exception {
+    public static void prepareTestEnv() {
         switch (driverType) {
             case CHROME:
-                    System.setProperty("webdriver.chrome.driver", ChromePath);
-                    webDriver = new ChromeDriver();
+                System.setProperty("webdriver.chrome.driver", ChromePath);
+                webDriver = new ChromeDriver();
 //            case FIREFOX:
 //                    System.setProperty("webdriver.gecko.driver", FirefoxPath);
 //                    webDriver = new FirefoxDriver();
         }
         webDriver.get("http://lucstictactoe.herokuapp.com/");
         webDriver.manage().window().maximize();
-    }
-
-    @Before
-    public void init() {
-        PageFactory.initElements(webDriver, this);
     }
 
     @Test
@@ -62,7 +54,6 @@ public class BasePageTest {
                 .isScoreActualAfterPlayer1Win();
 
     }
-
 
     @AfterClass
     public static void endingTests() {
