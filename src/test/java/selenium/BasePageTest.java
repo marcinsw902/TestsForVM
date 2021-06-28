@@ -20,7 +20,7 @@ public class BasePageTest {
 
     @BeforeTest
     @Parameters({"browser","path"})
-    public static void prepareTestEnv(String browser, String path, Boolean headless) throws Exception {
+    public static void prepareTestEnv(String browser, String path) throws Exception {
         if(browser.equalsIgnoreCase("Chrome")){
             System.setProperty("webdriver.chrome.driver", path);
             webDriver = new ChromeDriver();
