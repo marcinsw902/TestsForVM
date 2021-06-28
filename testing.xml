@@ -7,6 +7,7 @@
     <test name="ChromeTest">
         <parameter name="browser" value="Chrome" />
         <parameter name="path" value="drivers/chromedriver.exe" />
+
         <parameter name="player1" value="chromePlayer1" />
         <parameter name="player2" value="chromePlayer2" />
         <classes>
@@ -18,6 +19,7 @@
     <test name="FirefoxTest">
         <parameter name="browser" value="Firefox" />
         <parameter name="path" value="drivers/geckodriver.exe" />
+
         <parameter name="player1" value="firefoxPlayer1" />
         <parameter name="player2" value="firefoxPlayer2" />
         <classes>
@@ -29,6 +31,7 @@
     <test name="EdgeTest">
         <parameter name="browser" value="Edge" />
         <parameter name="path" value="drivers/msedgedriver.exe" />
+
         <parameter name="player1" value="edgePlayer1" />
         <parameter name="player2" value="edgePlayer2" />
         <classes>

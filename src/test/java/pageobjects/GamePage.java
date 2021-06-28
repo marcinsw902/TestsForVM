@@ -30,6 +30,7 @@ public class GamePage {
     private static final int MovesNeededForFirstPLayerToWin = 6;
     private static final int FIRSTPLAYERSCORE = 0;
     private static final int SECONDPLAYERSCORE = 1;
+    private static final int TIES = 2;
 
     GamePage(WebDriver webDriver, SoftAssertions softly, String player1, String player2) {
         this.webDriver = webDriver;
@@ -49,7 +50,7 @@ public class GamePage {
         softly.assertThat(statistics.get(SECONDPLAYERSCORE).getText())
                 .as(String.format("Player2 statistics format - validated"))
                 .isEqualTo(String.format("%s:0", player2));
-        softly.assertThat(statistics.get(2).getText())
+        softly.assertThat(statistics.get(TIES).getText())
                 .as(String.format("Ties format - validated"))
                 .isEqualTo("Ties: 0");
         return this;

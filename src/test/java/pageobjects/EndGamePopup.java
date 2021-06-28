@@ -30,10 +30,9 @@ public class EndGamePopup {
     }
 
     public EndGamePopup validateEndgameLabelAfterPlayer1Win(){
-        String variable = String.format("You win %s !!", player1);
         softly.assertThat(endgameLabel.getText())
                 .as(String.format("Popup label - validated"))
-                .isEqualTo(variable);
+                .isEqualTo(String.format("You win %s !!", player1));
         return this;
     }
     public GamePage validateAndClickAgainButton(){
