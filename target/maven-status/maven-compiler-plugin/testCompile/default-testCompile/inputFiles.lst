@@ -1,1 +1,4 @@
-D:\Java\vm\src\test\java\BasePageTest.java
+D:\Java\vm\src\test\java\pageobjects\GamePage.java
+D:\Java\vm\src\test\java\pageobjects\LoginPage.java
+D:\Java\vm\src\test\java\selenium\BasePageTest.java
+D:\Java\vm\src\test\java\pageobjects\EndGamePopup.java
